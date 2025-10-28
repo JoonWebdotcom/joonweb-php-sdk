@@ -3,9 +3,7 @@ namespace JoonWeb;
 
 use JoonWeb\Resources\Product;
 use JoonWeb\Resources\Order;
-use JoonWeb\Resources\Customer;
 use JoonWeb\Resources\Webhook;
-use JoonWeb\Resources\Theme;
 use JoonWeb\Resources\Site;
 
 class JoonWebAPI {
