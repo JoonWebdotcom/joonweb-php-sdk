@@ -132,7 +132,7 @@ JOONWEB_API_VERSION=26.0
 
 ## Error Handling
 All methods throw Exception on failure:
-```
+```php
 try {
     $products = $api->product->all();
 } catch (Exception $e) {
@@ -143,7 +143,7 @@ try {
 
 ## Webhook Verification
 Verify incoming webhooks with HMAC:
-```
+```php
 $hmac_header = $_SERVER['HTTP_X_JOONWEB_HMAC_SHA256'];
 $payload = file_get_contents('php://input');
 $calculated_hmac = base64_encode(hash_hmac('sha256', $payload, JOONWEB_CLIENT_SECRET, true));
