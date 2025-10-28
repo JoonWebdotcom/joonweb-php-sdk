@@ -15,10 +15,11 @@ composer require joonweb/joonweb-sdk
 ### Setup
 ```php 
 require_once 'src/JoonWebAPI.php';
-
+```
 ## Quick Start
 
 ### 1. Authentication Setup
+```php
 use JoonWeb\JoonWebAPI;
 
 $auth_url = "https://accounts.joonweb.com/oauth/authorize?" . http_build_query([
