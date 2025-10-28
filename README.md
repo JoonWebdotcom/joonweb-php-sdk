@@ -121,8 +121,8 @@ $site = $api->site->get();
 ## Configuration
 
 ### Environment Variables
-```env
 Set these in your .env file:
+```env
 APP_NAME="Your App Name"
 JOONWEB_CLIENT_ID=your_client_id
 JOONWEB_CLIENT_SECRET=your_client_secret
