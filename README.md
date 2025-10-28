@@ -3,9 +3,8 @@
 Professional PHP SDK for building applications on the JoonWeb platform.
 
 ## Installation
-    ```bash
-composer require joonweb/joonweb-sdk
-``
+    ```bash 
+    composer require joonweb/joonweb-sdk
 
 
 ### Requirements
