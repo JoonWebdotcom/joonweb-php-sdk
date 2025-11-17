@@ -14,26 +14,41 @@ class JoonWebAPI {
     public $order;
     public $webhook;
     public $site;
+    public $customer;
+    public $discount;
+    public $checkout;
+    public $shippingZone;
+    public $theme;
     
     public function __construct($access_token = null, $site_domain = null) {
         $this->access_token = $access_token;
         $this->site_domain = $site_domain;
         
         // Initialize resource clients
-        $this->product = new Product($access_token, $site_domain);
-        $this->order = new Order($access_token, $site_domain);
-        $this->webhook = new Webhook($access_token, $site_domain);
-        $this->site = new Site($access_token, $site_domain);
+    $this->product = new Product($access_token, $site_domain);
+    $this->order = new Order($access_token, $site_domain);
+    $this->webhook = new Webhook($access_token, $site_domain);
+    $this->site = new Site($access_token, $site_domain);
+    $this->customer = new \JoonWeb\Resources\Customer($access_token, $site_domain);
+    $this->discount = new \JoonWeb\Resources\Discount($access_token, $site_domain);
+    $this->checkout = new \JoonWeb\Resources\Checkout($access_token, $site_domain);
+    $this->shippingZone = new \JoonWeb\Resources\ShippingZone($access_token, $site_domain);
+    $this->theme = new \JoonWeb\Resources\Theme($access_token, $site_domain);
     }
     
     public function setAccessToken($token) {
         $this->access_token = $token;
         
         // Update all resource clients
-        $this->product->setAccessToken($token);
-        $this->order->setAccessToken($token);
-        $this->webhook->setAccessToken($token);
-        $this->site->setAccessToken($token);
+    $this->product->setAccessToken($token);
+    $this->order->setAccessToken($token);
+    $this->webhook->setAccessToken($token);
+    $this->site->setAccessToken($token);
+    $this->customer->setAccessToken($token);
+    $this->discount->setAccessToken($token);
+    $this->checkout->setAccessToken($token);
+    $this->shippingZone->setAccessToken($token);
+    $this->theme->setAccessToken($token);
 
         return $this;
     }
@@ -42,10 +57,15 @@ class JoonWebAPI {
         $this->site_domain = $domain;
         
         // Update all resource clients
-        $this->product->setSiteDomain($domain);
-        $this->order->setSiteDomain($domain);
-        $this->webhook->setSiteDomain($domain);
-        $this->site->setSiteDomain($domain);
+    $this->product->setSiteDomain($domain);
+    $this->order->setSiteDomain($domain);
+    $this->webhook->setSiteDomain($domain);
+    $this->site->setSiteDomain($domain);
+    $this->customer->setSiteDomain($domain);
+    $this->discount->setSiteDomain($domain);
+    $this->checkout->setSiteDomain($domain);
+    $this->shippingZone->setSiteDomain($domain);
+    $this->theme->setSiteDomain($domain);
 
         return $this;
     }

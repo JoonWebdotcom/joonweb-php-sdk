@@ -16,6 +16,33 @@ composer require joonweb/joonweb-sdk
 ```php 
 require_once 'src/JoonWebAPI.php';
 ```
+ 
+## Quick bootstrap (framework-agnostic example)
+
+Add a tiny bootstrap before using the SDK in your app. This example shows how to initialize the context and use the repository-provided `SessionManager` (replace with your own persistent storage in production):
+
+```php
+require 'vendor/autoload.php';
+use JoonWeb\Context;
+use JoonWeb\Auth\SessionManager; // repo-provided session manager
+
+Context::init([
+    'api_key' => getenv('JOONWEB_CLIENT_ID'),
+    'api_secret' => getenv('JOONWEB_CLIENT_SECRET'),
+    'api_version' => getenv('JOONWEB_API_VERSION') ?: '26.0',
+    'is_embedded' => false,
+    // Optional: provide your own session storage implementation. By default the repo's SessionManager will be used if present.
+    // 'session_storage' => new SessionManager(),
+]);
+
+$api = new JoonWeb\JoonWebAPI();
+$api->setAccessToken(/* access token from your session or OAuth flow */)
+        ->setSiteDomain('example.myjoonweb.com');
+```
+
+Notes:
+- Replace `SessionManager` with a persistent implementation for multi-process servers (DB, Redis, etc.).
+- The SDK is REST-first; use the REST resource clients (e.g. `$api->product`) to call endpoints.
 ## Quick Start
 
 ### 1. Authentication Setup
