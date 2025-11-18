@@ -11,11 +11,6 @@ composer require joonweb/joonweb-sdk
 - PHP 8.0+
 - cURL extension
 - JSON extension
-
-### Setup
-```php 
-require_once 'src/JoonWebAPI.php';
-```
  
 ## Quick bootstrap (framework-agnostic example)
 
