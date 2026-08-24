@@ -1,0 +1,16 @@
+{
+    "name": "joonweb/joonweb-sdk",
+    "description": "Professional PHP SDK for building applications on the JoonWeb platform.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "JoonWeb\\": "src/"
+        }
+    }
+}
