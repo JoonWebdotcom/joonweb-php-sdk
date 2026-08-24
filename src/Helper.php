@@ -20,4 +20,16 @@ class Helper {
         
         return hash_equals($hmac, $calculated_hmac);
     }
+
+    /**
+     * Generate the embedded app URL to redirect back into the JoonWeb Admin.
+     * 
+     * @param string $siteHash The unique site_hash from the OAuth callback request
+     * @param string $appSlug The app_slug (often the client_id/api_key)
+     * @return string The URL to redirect the user to
+     */
+    public static function getEmbeddedAppUrl(string $siteHash, string $appSlug): string {
+        $baseUrl = "https://accounts.joonweb.com/site/";
+        return $baseUrl . '?sitehash=' . urlencode($siteHash) . '&apps&' . urlencode($appSlug);
+    }
 }
